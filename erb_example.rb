@@ -10,7 +10,7 @@ puts template1.result(binding)
 
 my_array = [23, 54, 678, 34]
 template2 = ERB.new "My first array is <%= my_array %>"
-puts template2.result(binding_)
+puts template2.result(binding)
 
 my_first_boolean = 4 > 5 
 template3 = ERB.new "It's <%= my_first_boolean%>"
