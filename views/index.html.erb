@@ -3,8 +3,28 @@
   The time is now:
   <%= Time.now %>
 
-  <%= @request.query.inspect %>
 </p>
+
+<p> 
+	<%= @request.query.inspect %>
+</p>
+
+<form method='post' action="<%= @request.path %>">
+	First name: <input type="text" name="first_name" placeholder='first name'/><br />
+	<input type="submit" value="Submit" />
+</form>
+
+<% if @request.query['first_name'] && !@request.query['first_name'].empty? %>
+	Hello there <%= @request.query['first_name'] %>
+	<% else %>
+		Enter the name
+		<% end %>
+
+<form>
+	<input type="radio" name="Gender" value="male" checked>Male
+	<br>
+	<input type="radio" name="Gender" value="female" checked>Female
+</form>
 
 <p>
   My Name is:
